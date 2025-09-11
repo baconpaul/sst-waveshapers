@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 project(sst-waveshapers VERSION 0.5 LANGUAGES C CXX)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 
 add_library(${PROJECT_NAME} INTERFACE)
 target_include_directories(${PROJECT_NAME} INTERFACE include)
@@ -11,6 +11,7 @@ if(MSVC)
         INTERFACE
             _USE_MATH_DEFINES=1 # So that we can have M_PI on MSVC
     )
+    target_compile_options(${PROJECT_NAME} INTERFACE /Zc:__cplusplus)
 endif()
 
 get_directory_property(parent_dir PARENT_DIRECTORY)
