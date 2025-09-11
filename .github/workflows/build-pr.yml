@@ -85,7 +85,7 @@ jobs:
           username: ${{ github.actor }}
           token: ${{ secrets.GITHUB_TOKEN }}
           cmakeArgs: -DCMAKE_BUILD_TYPE=Release -DSST_WAVESHAPERS_BUILD_TESTS=TRUE
-          target: sst-filters-tests
+          target: sst-waveshapers-tests
 
       - name: Run Test
         run: |
